@@ -3,5 +3,5 @@ import { mainnet } from 'viem/chains';
 
 export const ensClient = createPublicClient({
 	chain: mainnet,
-	transport: http()
+	transport: http('https://rpc.ankr.com/eth')
 });
