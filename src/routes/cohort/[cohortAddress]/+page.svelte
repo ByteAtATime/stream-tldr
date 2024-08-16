@@ -1,33 +1,35 @@
 <script lang="ts">
-    import Markdown from "svelte-exmarkdown"
+    import Markdown from "svelte-exmarkdown";
     import { shortenAddress } from "$lib/utils";
 
     export let data;
 
-    let summary: string|null = null;
-    let error: string|null = null;
+    let summary: string | null = null;
+    let error: string | null = null;
 
-    const {cohortAddress, summaryPromise, builderEnsPromise} = data;
+    const { cohortAddress, summaryPromise, builderEnsPromise } = data;
 
-    summaryPromise
-        .then((s: string) => {
-            summary = s;
+    async function fetchSummary() {
+        try {
+            summary = await summaryPromise;
+            const promises = await builderEnsPromise;
 
-            builderEnsPromise.then((promises) => {
-                for (const promise of promises) {
-                    promise
-                        .then(([address, ensName]) => {
-                            if (ensName && summary) {
-                                summary = summary.replaceAll(address, ensName)
-                            }
-                        })
-                        .catch(() => {});
+            for (const promise of promises) {
+                try {
+                    const [address, ensName] = await promise;
+                    if (ensName && summary) {
+                        summary = summary.replaceAll(address, ensName);
+                    }
+                } catch {
+                    // Ignore
                 }
-            });
-        })
-        .catch((e: Error) => {
+            }
+        } catch (e) {
             error = e.message;
-        });
+        }
+    }
+
+    fetchSummary();
 </script>
 
 <div class="flex flex-col items-center px-4 py-8 max-w-screen-md mx-auto">
@@ -41,7 +43,7 @@
         <p style="color: red">{error}</p>
     {:else}
         <div class="prose">
-            <Markdown md={summary}/>
+            <Markdown md={summary} />
         </div>
     {/if}
 </div>
