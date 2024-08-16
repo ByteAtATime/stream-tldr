@@ -22,7 +22,7 @@ const builderWithdrawalSchema = z.object({
 		.transform((val) => (typeof val === 'string' ? new Date(parseInt(val) * 1000) : val))
 });
 
-type BuilderWithdrawal = z.infer<typeof builderWithdrawalSchema>;
+export type BuilderWithdrawal = z.infer<typeof builderWithdrawalSchema>;
 
 export interface BuilderProvider {
 	getWithdrawals(): Promise<BuilderWithdrawal[]>;
