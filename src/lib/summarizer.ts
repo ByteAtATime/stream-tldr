@@ -17,7 +17,7 @@ export class OpenAISummaryProvider implements SummaryProvider {
 
 	async summarizeWithdrawals(withdrawals: BuilderWithdrawal[]): Promise<string> {
 		const output = await this.openai.chat.completions.create({
-			model: 'gpt-4o',
+			model: 'gpt-4o-mini',
 			messages: [
 				{
 					role: 'system',
