@@ -14,8 +14,8 @@
     const displayAddress = shortenAddress(builderAddress);
 </script>
 
-<div class="flex flex-col items-center">
-    <h1 class="font-bold text-2xl">
+<div class="flex flex-col items-center px-4 py-8 max-w-screen-md mx-auto">
+    <h1 class="font-bold text-2xl mb-4">
         {#await ensNamePromise}
             {displayAddress}
         {:then ensName}
