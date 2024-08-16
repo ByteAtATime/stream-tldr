@@ -32,8 +32,7 @@ Your task: Analyze the provided information about developers, including their Et
 Instructions:
 1. Write a 1-2 sentence summary of the developer's activities over the past 6 months, focusing on how their work aligns with the BuidlGuidl mission.
 2. Display the total amount of ETH the developer has withdrawn.
-3. Assign an impact score on a scale of 0-100, indicating the developer's contribution towards the BuidlGuidl mission.
-4. Justify the score based on the developer's work and withdrawals.
+3. Assign an impact score on a scale of 0-100, indicating the developer's contribution towards the BuidlGuidl mission. Justify the score based on the developer's work and withdrawals.
 
 Details to Consider:
 - The summary should be concise and mission-focused.
