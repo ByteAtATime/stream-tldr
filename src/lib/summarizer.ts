@@ -12,6 +12,7 @@ Your task: Summarize the given user's recent activities based on their Ethereum 
 Instructions:
 1. Start with a brief overview of the user's focus and recent projects.
 2. Provide a chronological list of the withdrawals, each with a brief description of the work done at that time.
+3. Include links where possible and relevant.
 
 Context:
 - BuidlGuidl: Community of Ethereum builders.
