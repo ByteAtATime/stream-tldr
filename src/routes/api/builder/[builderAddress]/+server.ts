@@ -13,6 +13,10 @@ export const GET: RequestHandler = async ({ params }) => {
 	const builderProvider = new GraphQLBuilderProvider(builderAddress);
 	const withdrawals = await builderProvider.getWithdrawals();
 
+	if (withdrawals.length === 0) {
+		return new Response('No withdrawals found', { status: 404 });
+	}
+
 	const summary = await new OpenAISummaryProvider().summarizeWithdrawals(withdrawals);
 
 	return new Response(summary);
