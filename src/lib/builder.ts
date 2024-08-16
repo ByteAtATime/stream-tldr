@@ -3,7 +3,7 @@ import { PUBLIC_STREAM_INDEXER_URL } from '$env/static/public';
 import { z } from 'zod';
 import { addressSchema } from '$lib/types';
 
-const cohortBuilderSchema = z.object({
+export const cohortBuilderSchema = z.object({
 	id: z.string(),
 	amount: z.number(),
 	cohortContractAddress: addressSchema,
@@ -11,7 +11,7 @@ const cohortBuilderSchema = z.object({
 	ens: z.null()
 });
 
-const builderWithdrawalSchema = z.object({
+export const builderWithdrawalSchema = z.object({
 	builder: addressSchema,
 	amount: z.number(),
 	reason: z.string(),

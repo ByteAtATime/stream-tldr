@@ -17,7 +17,7 @@ export const GET: RequestHandler = async ({ params }) => {
 		return new Response('No withdrawals found', { status: 404 });
 	}
 
-	const summary = await new OpenAISummaryProvider().summarizeWithdrawals(withdrawals);
+	const summary = await new OpenAISummaryProvider().summarizeBuilderWithdrawals(withdrawals);
 
 	return new Response(summary);
 };
