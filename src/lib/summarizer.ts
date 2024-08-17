@@ -10,7 +10,7 @@ export interface SummaryProvider {
 const CONTEXT = `
 Context:
 - BuidlGuidl: Community of Ethereum builders.
-- SE-2: Ethereum application framework.
+- SE-2: Ethereum application framework, main project of the BuidlGuidl.
 - SRE (SpeedRun Ethereum): Challenges for Ethereum developers.
 - Batches program: Ethereum developer training program.
 `;
@@ -20,7 +20,7 @@ Your task: Summarize the given user's recent activities based on their Ethereum 
 
 Instructions:
 1. Start with a brief overview of the user's focus and recent projects.
-2. Provide a chronological list of the withdrawals, each with a brief description of the work done at that time.
+2. Provide a chronological list of the withdrawals, each with a brief description of the work done at that time. Don't simply regurgitate the withdrawal details.
 3. Include links where possible and relevant.
 
 ${CONTEXT}
@@ -44,6 +44,7 @@ ${CONTEXT}
 Details to Consider:
 - The summary should be concise and mission-focused.
 - The impact score should reflect the relevance and effectiveness of the developer's work, especially related to the BuidlGuidl mission statement.
+- Take the amount of ETH withdrawn into account when assigning the impact score, especially compared to the amount of work done.
 - Use specific examples from the developer's work and withdrawals to support your analysis. Add links where relevant.
 `;
 
