@@ -44,7 +44,7 @@ ${CONTEXT}
 Details to Consider:
 - The summary should be concise and mission-focused.
 - The impact score should reflect the relevance and effectiveness of the developer's work, especially related to the BuidlGuidl mission statement.
-- Use specific examples from the developer's work and withdrawals to support your analysis.
+- Use specific examples from the developer's work and withdrawals to support your analysis. Add links where relevant.
 `;
 
 export class OpenAISummaryProvider implements SummaryProvider {
