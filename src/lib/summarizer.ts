@@ -35,7 +35,7 @@ const COHORT_PROMPT = `
 Your task: Analyze the provided information about developers, including their Ethereum withdrawals and the BuidlGuidl mission ("Onboard developers onto Ethereum"). For each developer:
 
 Instructions:
-1. Write a 1-2 sentence summary of the developer's activities over the past 6 months, focusing on how their work aligns with the BuidlGuidl mission.
+1. Write a 1-2 sentence summary of the developer's activities over the past 6 months, focusing on how their work aligns with the BuidlGuidl mission. Remember to add specific details, and include links to important PRs.
 2. Display the total amount of ETH the developer has withdrawn.
 3. Assign an impact score on a scale of 0-100, indicating the developer's contribution towards the BuidlGuidl mission. Justify the score based on the developer's work and withdrawals.
 
@@ -45,7 +45,7 @@ Details to Consider:
 - The summary should be concise and mission-focused.
 - The impact score should reflect the relevance and effectiveness of the developer's work, especially related to the BuidlGuidl mission statement.
 - Take the amount of ETH withdrawn into account when assigning the impact score, especially compared to the amount of work done (we want a higher work-to-eth ratio).
-- Use specific examples from the developer's work and withdrawals to support your analysis. Add links where relevant.
+- Use specific examples from the developer's work and withdrawals to support your analysis.
 `;
 
 export class OpenAISummaryProvider implements SummaryProvider {
