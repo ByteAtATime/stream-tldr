@@ -7,6 +7,13 @@ export interface SummaryProvider {
 	summarizeCohortDevelopers(withdrawals: BuilderWithdrawal[]): Promise<string>;
 }
 
+const CONTEXT = `
+Context:
+- BuidlGuidl: Community of Ethereum builders.
+- SE-2: Ethereum application framework.
+- SRE (SpeedRun Ethereum): Challenges for Ethereum developers.
+`;
+
 const BUILDER_PROMPT = `
 Your task: Summarize the given user's recent activities based on their Ethereum withdrawals, each with a timestamp, amount, and description of work.
 
@@ -15,10 +22,7 @@ Instructions:
 2. Provide a chronological list of the withdrawals, each with a brief description of the work done at that time.
 3. Include links where possible and relevant.
 
-Context:
-- BuidlGuidl: Community of Ethereum builders.
-- SE-2: Ethereum application framework.
-- SRE (SpeedRun Ethereum): Challenges for Ethereum developers.
+${CONTEXT}
 
 Audience: Fellow BuidlGuidl member, so be direct and concise. Address the user as they/them.
 
@@ -33,6 +37,8 @@ Instructions:
 1. Write a 1-2 sentence summary of the developer's activities over the past 6 months, focusing on how their work aligns with the BuidlGuidl mission.
 2. Display the total amount of ETH the developer has withdrawn.
 3. Assign an impact score on a scale of 0-100, indicating the developer's contribution towards the BuidlGuidl mission. Justify the score based on the developer's work and withdrawals.
+
+${CONTEXT}
 
 Details to Consider:
 - The summary should be concise and mission-focused.
