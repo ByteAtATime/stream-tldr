@@ -12,6 +12,7 @@ Context:
 - BuidlGuidl: Community of Ethereum builders.
 - SE-2: Ethereum application framework.
 - SRE (SpeedRun Ethereum): Challenges for Ethereum developers.
+- Batches program: Ethereum developer training program.
 `;
 
 const BUILDER_PROMPT = `
