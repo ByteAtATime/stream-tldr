@@ -44,7 +44,7 @@ ${CONTEXT}
 Details to Consider:
 - The summary should be concise and mission-focused.
 - The impact score should reflect the relevance and effectiveness of the developer's work, especially related to the BuidlGuidl mission statement.
-- Take the amount of ETH withdrawn into account when assigning the impact score, especially compared to the amount of work done.
+- Take the amount of ETH withdrawn into account when assigning the impact score, especially compared to the amount of work done (we want a higher work-to-eth ratio).
 - Use specific examples from the developer's work and withdrawals to support your analysis. Add links where relevant.
 `;
 
