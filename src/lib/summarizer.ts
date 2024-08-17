@@ -85,6 +85,7 @@ export class OpenAISummaryProvider implements SummaryProvider {
 
 		const output = await this.openai.chat.completions.create({
 			model: 'gpt-4o-mini',
+			temperature: 0.0000001,
 			messages: [
 				{
 					role: 'system',
