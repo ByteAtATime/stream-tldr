@@ -8,11 +8,11 @@ export interface SummaryProvider {
 }
 
 const CONTEXT = `
-Context:
-- BuidlGuidl: Community of Ethereum builders.
-- SE-2: Ethereum application framework, main project of the BuidlGuidl.
-- SRE (SpeedRun Ethereum): Challenges for Ethereum developers.
-- Batches program: Ethereum developer training program.
+### Context:
+- **BuidlGuidl:** A community of Ethereum builders focused on onboarding and supporting developers.
+- **SE-2:** Ethereum application framework, a core project within the BuidlGuidl.
+- **SRE (SpeedRun Ethereum):** A series of challenges designed to test and improve Ethereum development skills.
+- **Batches Program:** A training initiative aimed at developing Ethereum skills among new developers.
 `;
 
 const BUILDER_PROMPT = `
@@ -32,21 +32,30 @@ The user has made many contributions to the SE-2 framework, including a new feat
 `;
 
 const COHORT_PROMPT = `
-Your task: Analyze the provided information about developers, including their Ethereum withdrawals and the BuidlGuidl mission ("Onboard developers onto Ethereum"). For each developer:
+**Your Task:** Analyze the provided data on developers, including their Ethereum withdrawals and their contributions to the BuidlGuidl mission ("Onboarding developers onto Ethereum"). For each developer:
 
-Instructions:
-1. Write a 1-2 sentence summary of the developer's activities over the past 6 months, focusing on how their work aligns with the BuidlGuidl mission. Remember to add specific details, and include links to important PRs.
-2. Display the total amount of ETH the developer has withdrawn.
-3. Assign an impact score on a scale of 0-100, indicating the developer's contribution towards the BuidlGuidl mission. Justify the score based on the developer's work and withdrawals.
-4. Include a list of large PRs or contributions made by the developer, with links where possible.
+### Instructions:
+1. **Summarize Activities:** Write a concise 1-2 sentence summary of the developer's activities over the past 6 months. Focus on how their work aligns with the BuidlGuidl mission, highlighting specific contributions and achievements.
+2. **ETH Withdrawals:** Display the total amount of ETH the developer has withdrawn during this period.
+3. **Impact Score:** Assign an impact score (0-100) based on the developer's contribution to the BuidlGuidl mission. Justify your score by evaluating the relevance and effectiveness of their work relative to their withdrawals. A higher score should reflect a strong work-to-ETH ratio.
+4. **Key Contributions:** List major PRs, projects, or other significant contributions the developer has made, including links where available. Also, mention a list of any PRs submitted by the developer.
 
 ${CONTEXT}
 
-Details to Consider:
-- The summary should be concise and mission-focused.
-- The impact score should reflect the relevance and effectiveness of the developer's work, especially related to the BuidlGuidl mission statement.
-- Take the amount of ETH withdrawn into account when assigning the impact score, especially compared to the amount of work done (we want a higher work-to-eth ratio).
-- Use specific examples from the developer's work and withdrawals to support your analysis.
+### Key Considerations:
+- **Mission Alignment:** Ensure the summary emphasizes how well the developer’s work supports the BuidlGuidl mission.
+- **ETH Withdrawals:** Consider the amount of ETH withdrawn when assigning the impact score, favoring developers with a high output relative to their withdrawals.
+- **Specific Examples:** Use concrete examples from the developer’s contributions and withdrawals to support your analysis.
+
+### Output Format:
+#### Developer: 0x...
+- **Summary**: ...
+- **ETH Withdrawn**: ...
+- **Impact Score**: .../100 - ... (justification)
+- **Key Contributions**:
+	- [PR #123](https://github.com/...): ...
+	- Project: ...
+	- ...
 `;
 
 export class OpenAISummaryProvider implements SummaryProvider {
