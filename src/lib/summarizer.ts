@@ -38,6 +38,7 @@ Instructions:
 1. Write a 1-2 sentence summary of the developer's activities over the past 6 months, focusing on how their work aligns with the BuidlGuidl mission. Remember to add specific details, and include links to important PRs.
 2. Display the total amount of ETH the developer has withdrawn.
 3. Assign an impact score on a scale of 0-100, indicating the developer's contribution towards the BuidlGuidl mission. Justify the score based on the developer's work and withdrawals.
+4. Include a list of large PRs or contributions made by the developer, with links where possible.
 
 ${CONTEXT}
 
